@@ -7,72 +7,151 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-</head>   
+</head>
+
 <body>
     <!-- Navigation Bar -->
-     <nav class="navbar glass">
-        <div class="logo"> Tatiana Brimm</div>
+    <nav class="navbar glass">
+        <div class="logo">Tatiana Brimm</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Projects</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-     </nav>
+    </nav>
 
-
-     <!-- Hero Section -->
-     <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-text glass">
-            <h1>Hi, I’m <span class="highlight">Tatiana Brimm!</span></h1>
-            <p>I’m a <span id="typing"></span></p>
-            <p>I ship and build innovative systems with Ai integrations. </p>
+            <h1>Hi, I'm <span class="highlight">Tatiana Brimm!</span></h1>
+            <p>I'm a <span id="typing"></span></p>
+            <p>I ship and build innovative systems with Ai integrations.</p>
             <div class="buttons">
-              <a href="#" class="btn">📄 Download Resume</a>
-              <a href="#" class="btn">💻 GitHub</a>
-              <a href="#" class="btn">✉️ Contact Me</a>
-       </div>
-    </div>
-  </section>
+                <a href="#" class="btn">📄 Download Resume</a>
+                <a href="#" class="btn">💻 GitHub</a>
+                <a href="#" class="btn">✉️ Contact Me</a>
+            </div>
+        </div>
+    </section>
 
-     <!-- About Me -->
+    <!-- About Me -->
     <section id="about" class="about-section">
         <div class="about-container">
             <div class="about-avatar">
-                 <img src="Tati 4.png"Tatiana Avatar">
+                <img src="Tati 4.png" alt="Tatiana Brimm Avatar">
+            </div>
+
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I'm <span class="highlight">Tatiana Brimm</span>, a passionate software engineer who loves building intelligent,
+                    efficient, and meaningful systems. My work blends AI integration, full-stack development, and
+                    automation to make technology more human. When I'm not coding, I'm studying, designing, or thinking
+                    about how to create tools that actually help people — one project at a time.
+                </p>
+
+                <div class="skills">
+                    <h3>Core Skills</h3>
+                    <div class="skills-grid">
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>FastAPI</span>
+                        <span>React</span>
+                        <span>Tailwind CSS</span>
+                        <span>n8n</span>
+                        <span>Supabase</span>
+                        <span>AI Workflow Design</span>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>
-                      Hi! I’m <span class="highlight">Tatiana Brimm</span>, a passionate software engineer who loves building intelligent,
-                      efficient, and meaningful systems. My work blends AI integration, full-stack development, and
-                      automation to make technology more human. When I’m not coding, I’m studying, designing, or thinking
-                      about how to create tools that actually help people — one project at a time.
-                   </p>
-                  <div class="skills">
-        <h3>Core Skills</h3>
-        <div class="skills-grid">
-          <span>Python</span>
-          <span>JavaScript</span>
-          <span>FastAPI</span>
-          <span>React</span>
-          <span>Tailwind CSS</span>
-          <span>n8n</span>
-          <span>Supabase</span>
-          <span>AI Workflow Design</span>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-     
-     
+    <!-- Project Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <!-- Changed title from "Featured Projects" to "All Projects" -->
+            <h2>Featured Projects</h2>
+
+          
+
+            <!-- Updated project cards with horizontal layout, images, and categories -->
+            <div class="projects-grid">
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="jobseekerAI-port.jpg"alt="JobSeeker AI">
+                    </div>
+                    <div class="project-content">
+                        <h3>JobSeeker AI</h3>
+                        <p>Your personal AI career assistant that helps you find, tailor, and apply for jobs faster.</p>
+                        <!-- Moved button directly under description -->
+                        <button class="btn view-project-btn" data-project="jobseeker">View Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Proposal AI">
+                    </div>
+                    <div class="project-content">
+                        <h3>Proposal AI</h3>
+                        <p>An AI-powered system that generates custom client proposals and automates follow-ups.</p>
+                        <button class="btn view-project-btn" data-project="proposal">View Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="full-stack">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Weather App">
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App</h3>
+                        <p>Real-time weather tracking with beautiful UI and accurate forecasts.</p>
+                        <button class="btn view-project-btn" data-project="weather">View Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="full-stack">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Portfolio Website">
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p>Modern portfolio with smooth animations and glassmorphic design.</p>
+                        <button class="btn view-project-btn" data-project="portfolio">View Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Lead Gen AI">
+                    </div>
+                    <div class="project-content">
+                        <h3>Lead Gen AI</h3>
+                        <p>Automated lead generation and qualification with AI-powered workflows.</p>
+                        <button class="btn view-project-btn" data-project="leadgen">View Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="data">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Data Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Dashboard</h3>
+                        <p>Interactive analytics and visualization with real-time data updates.</p>
+                        <button class="btn view-project-btn" data-project="dashboard">View Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-     <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
-
 
