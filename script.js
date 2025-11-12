@@ -1,284 +1,115 @@
-// ==================== GSAP ANIMATIONS ====================
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll(".section-content");
 
-// Import GSAP library
-const gsap = window.gsap
+  // Switching content sections
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = link.dataset.section;
 
-// Hero text entrance animation
-gsap.from(".hero-text", {
-  duration: 1.5,
-  opacity: 0,
-  y: 30,
-  ease: "power3.out",
-})
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
 
-// Navbar entrance animation
-gsap.from(".navbar", {
-  duration: 1,
-  opacity: 0,
-  y: -20,
-  ease: "power2.out",
-})
+      sections.forEach(s => s.classList.remove("active"));
+      document.getElementById(target).classList.add("active");
+    });
+  });
 
-// Staggered hero content animation
-gsap.from(".hero-text h1, .hero-text p, .buttons", {
-  duration: 1.5,
-  opacity: 0,
-  y: 40,
-  stagger: 0.3,
-  ease: "power3.out",
-})
+  // Typing Effect on Home
+  new Typed("#typing", {
+    strings: [
+      "Full-Stack Engineer",
+      "AI Engineer",
+      "Data Analyst",
+      "Tech Enthusiast",
+      "Automation Specialist"
+    ],
+    typeSpeed: 70,
+    backSpeed: 50,
+    backDelay: 1200,
+    loop: true,
+  });
 
-// ==================== TYPED.JS ANIMATION ====================
+// ===== Drawer Logic =====
+const learnButtons = document.querySelectorAll('.learn-more-btn');
+const drawers = document.querySelectorAll('.project-drawer');
+const closeButtons = document.querySelectorAll('.close-drawer');
 
-// Import Typed library
-const Typed = window.Typed
+learnButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const project = btn.getAttribute('data-project');
+    const drawer = document.querySelector(`#drawer-${project}`);
+    if (drawer) drawer.classList.add('open');
+  });
+});
 
-// Typing effect for role titles
-var typed = new Typed("#typing", {
-  strings: ["Software Engineer", "AI Specialist", "Data Engineer", "Full-Stack Developer", "Tech Enthusiast"],
-  typeSpeed: 70,
-  backSpeed: 50,
-  backDelay: 1200,
-  loop: true,
-  showCursor: true,
-  cursorChar: "|",
-})
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.project-drawer').classList.remove('open');
+  });
+});
 
-// ==================== SCROLL ANIMATIONS ====================
+// Optional: close if clicking outside drawer content
+drawers.forEach(drawer => {
+  drawer.addEventListener('click', e => {
+    if (e.target === drawer) drawer.classList.remove('open');
+  });
+});
 
-// Register GSAP ScrollTrigger plugin
-gsap.registerPlugin(window.ScrollTrigger)
 
-// About section entrance animation with layered effects
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-  })
-  .from(".about-avatar img", {
-    opacity: 0,
-    scale: 0.8,
-    y: 60,
-    duration: 1.3,
+
+
+
+});
+
+// ===================== Skills Animation =====================
+
+
+
+
+// Re-animate when user clicks the "Skills" nav link
+document.querySelector('a[href="#skills"]').addEventListener("click", () => {
+  animateSkills();
+});
+
+// Optional: also trigger once on load (for testing)
+window.addEventListener("load", () => {
+  if (window.location.hash === "#skills") animateSkills();
+});
+
+
+// Animation function
+function animateSkills() {
+  // Reset initial states
+  gsap.set(".skill-card", { opacity: 0, y: 40 });
+  gsap.set(".skill-tags span", { opacity: 0, y: 20 });
+
+
+
+  
+  // Animate cards
+  gsap.to(".skill-card", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
     ease: "power3.out",
-  })
-  .to(
-    ".about-text",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      ease: "power3.out",
+    stagger: 0.2,
+  });
+
+  // Animate tags inside each card
+  gsap.to(".skill-tags span", {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    delay: 0.8, // waits until cards appear
+    ease: "power2.out",
+    stagger: {
+      each: 0.05,
+      from: "random",
     },
-    "-=0.7",
-  )
-
-// ==================== CAROUSEL FUNCTIONALITY ====================
-
-let currentSlide = 0
-const slides = document.querySelectorAll(".carousel-slide")
-const totalSlides = slides.length
-const carouselWrapper = document.querySelector(".carousel-wrapper")
-const prevBtn = document.getElementById("prevBtn")
-const nextBtn = document.getElementById("nextBtn")
-const dots = document.querySelectorAll(".carousel-dot")
-
-function updateCarousel() {
-  carouselWrapper.style.transform = `translateX(-${currentSlide * 100}%)`
-
-  // Update dots
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentSlide)
-  })
-
-  // Update button states
-  prevBtn.disabled = currentSlide === 0
-  nextBtn.disabled = currentSlide === totalSlides - 1
+  });
 }
 
-prevBtn.addEventListener("click", () => {
-  if (currentSlide > 0) {
-    currentSlide--
-    updateCarousel()
-  }
-})
-
-nextBtn.addEventListener("click", () => {
-  if (currentSlide < totalSlides - 1) {
-    currentSlide++
-    updateCarousel()
-  }
-})
-
-dots.forEach((dot) => {
-  dot.addEventListener("click", (e) => {
-    currentSlide = Number.parseInt(e.target.dataset.slide)
-    updateCarousel()
-  })
-})
-
-// Auto-rotate carousel every 5 seconds
-setInterval(() => {
-  if (currentSlide < totalSlides - 1) {
-    currentSlide++
-  } else {
-    currentSlide = 0
-  }
-  updateCarousel()
-}, 5000)
-
-// ==================== DRAWER FUNCTIONALITY ====================
-
-const drawerOverlay = document.getElementById("drawerOverlay")
-const drawerTitle = document.getElementById("drawerTitle")
-const drawerContent = document.getElementById("drawerContent")
-const drawerClose = document.getElementById("drawerClose")
-const viewProjectBtns = document.querySelectorAll(".view-project-btn")
-
-// Project data
-const projectData = {
-  jobseeker: {
-    title: "JobSeeker AI",
-    icon: "🤖",
-    description:
-      "JobSeeker AI is your personal career assistant that revolutionizes the job search process. Using advanced AI algorithms, it helps you discover opportunities, tailor applications, and track your progress.",
-    features: [
-      "AI-powered job matching based on your skills and preferences",
-      "Automated resume tailoring for each application",
-      "Cover letter generation with personalized content",
-      "Application tracking and follow-up reminders",
-      "Interview preparation with AI-generated questions",
-    ],
-    tech: ["Python", "FastAPI", "OpenAI API", "React", "Supabase"],
-    link: "#",
-  },
-  proposal: {
-    title: "Proposal AI",
-    icon: "📝",
-    description:
-      "Proposal AI streamlines the proposal creation process for businesses. It generates customized, professional proposals and automates client follow-ups, saving hours of manual work.",
-    features: [
-      "AI-generated proposals based on client requirements",
-      "Template library with industry-specific formats",
-      "Automated follow-up email sequences",
-      "Proposal analytics and tracking",
-      "Integration with CRM systems",
-    ],
-    tech: ["Python", "n8n", "OpenAI API", "Tailwind CSS", "PostgreSQL"],
-    link: "#",
-  },
-  weather: {
-    title: "Weather App",
-    icon: "🌤️",
-    description:
-      "A beautiful and intuitive weather application that provides real-time weather data with stunning visualizations and accurate forecasts.",
-    features: [
-      "Real-time weather data from multiple sources",
-      "7-day forecast with hourly breakdowns",
-      "Interactive weather maps",
-      "Location-based automatic updates",
-      "Weather alerts and notifications",
-    ],
-    tech: ["JavaScript", "React", "OpenWeather API", "Chart.js"],
-    link: "#",
-  },
-  portfolio: {
-    title: "Portfolio Website",
-    icon: "💼",
-    description:
-      "A modern, responsive portfolio website featuring smooth animations, glassmorphic design, and an engaging user experience.",
-    features: [
-      "Responsive design for all devices",
-      "GSAP animations for smooth transitions",
-      "Glassmorphic UI elements",
-      "Project showcase with filtering",
-      "Contact form with email integration",
-    ],
-    tech: ["HTML", "CSS", "JavaScript", "GSAP", "Typed.js"],
-    link: "#",
-  },
-  leadgen: {
-    title: "Lead Gen AI",
-    icon: "🎯",
-    description:
-      "An intelligent lead generation system that automates prospect discovery, qualification, and outreach using AI-powered workflows.",
-    features: [
-      "Automated prospect research and scoring",
-      "AI-powered lead qualification",
-      "Personalized outreach campaigns",
-      "CRM integration and data sync",
-      "Analytics dashboard with conversion tracking",
-    ],
-    tech: ["Python", "n8n", "Supabase", "React", "OpenAI API"],
-    link: "#",
-  },
-  dashboard: {
-    title: "Data Dashboard",
-    icon: "📊",
-    description:
-      "An interactive analytics dashboard that transforms complex data into actionable insights with beautiful visualizations and real-time updates.",
-    features: [
-      "Real-time data visualization",
-      "Customizable dashboard layouts",
-      "Multiple chart types and graphs",
-      "Data export and reporting",
-      "Role-based access control",
-    ],
-    tech: ["React", "D3.js", "FastAPI", "PostgreSQL", "Redis"],
-    link: "#",
-  },
-}
-
-// Open drawer with project details
-viewProjectBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const projectKey = e.target.dataset.project
-    const project = projectData[projectKey]
-
-    if (project) {
-      drawerTitle.textContent = project.title
-
-      drawerContent.innerHTML = `
-        <div style="font-size: 3rem; margin-bottom: 1rem;">${project.icon}</div>
-        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">${project.description}</p>
-        
-        <h3>Key Features</h3>
-        <ul>
-          ${project.features.map((feature) => `<li>${feature}</li>`).join("")}
-        </ul>
-        
-        <h3>Technologies Used</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-          ${project.tech.map((tech) => `<span style="background: rgba(147, 197, 253, 0.2); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(147, 197, 253, 0.3);">${tech}</span>`).join("")}
-        </div>
-        
-        <a href="${project.link}" class="btn" style="display: inline-block; margin-top: 1rem;">Visit Project</a>
-      `
-
-      drawerOverlay.classList.add("active")
-    }
-  })
-})
-
-// Close drawer
-drawerClose.addEventListener("click", () => {
-  drawerOverlay.classList.remove("active")
-})
-
-drawerOverlay.addEventListener("click", (e) => {
-  if (e.target === drawerOverlay) {
-    drawerOverlay.classList.remove("active")
-  }
-})
-
-// Close drawer with Escape key
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && drawerOverlay.classList.contains("active")) {
-    drawerOverlay.classList.remove("active")
-  }
-})
 
 
