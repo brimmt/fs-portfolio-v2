@@ -1,4 +1,5 @@
 # Professional Portfolio V2  
+![Portfolio Preview](assets/portfolio-preview.png)
 
 ## Overview  
 This is the second version of my personal portfolio website — a clean, glassmorphic, one-page layout built completely from scratch using **HTML**, **CSS**, and **vanilla JavaScript**.  
