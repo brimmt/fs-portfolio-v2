@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===== Drawer Logic =====
 const learnButtons = document.querySelectorAll('.learn-more-btn');
 const drawers = document.querySelectorAll('.project-drawer');
-const closeButtons = document.querySelectorAll('.close-drawer');
+const closeButtons = document.querySelectorAll('.close-drawer-x');
 
 learnButtons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -50,16 +50,57 @@ closeButtons.forEach(btn => {
   });
 });
 
-// Optional: close if clicking outside drawer content
+
 drawers.forEach(drawer => {
   drawer.addEventListener('click', e => {
     if (e.target === drawer) drawer.classList.remove('open');
   });
 });
 
+// Projects Carousel Logic
+const projectCards = document.querySelectorAll('.project-card');
+const prevBtn = document.getElementById('prevProjects');
+const nextBtn = document.getElementById('nextProjects');
+const cardsPerPage = 4;
+let currentPage = 0;
+const totalPages = Math.ceil(projectCards.length / cardsPerPage);
 
+function showProjectPage(pageIndex) {
+  // Hide all cards
+  projectCards.forEach(card => {
+    card.style.display = 'none';
+  });
+  
+  // Show cards for current page
+  const startIndex = pageIndex * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  
+  for (let i = startIndex; i < endIndex && i < projectCards.length; i++) {
+    projectCards[i].style.display = 'flex';
+  }
+  
+  // Update button states
+  prevBtn.disabled = pageIndex === 0;
+  nextBtn.disabled = pageIndex === totalPages - 1;
+}
 
+// Initialize carousel
+showProjectPage(currentPage);
 
+// Navigation button handlers
+nextBtn.addEventListener('click', () => {
+  if (currentPage < totalPages - 1) {
+    currentPage++;
+    showProjectPage(currentPage);
+  }
+});
+
+prevBtn.addEventListener('click', () => {
+  if (currentPage > 0) {
+    currentPage--;
+    showProjectPage(currentPage);
+  }
+});
 
 });
 
@@ -68,12 +109,12 @@ drawers.forEach(drawer => {
 
 
 
-// Re-animate when user clicks the "Skills" nav link
+
 document.querySelector('a[href="#skills"]').addEventListener("click", () => {
   animateSkills();
 });
 
-// Optional: also trigger once on load (for testing)
+
 window.addEventListener("load", () => {
   if (window.location.hash === "#skills") animateSkills();
 });
@@ -102,7 +143,7 @@ function animateSkills() {
     opacity: 1,
     y: 0,
     duration: 0.6,
-    delay: 0.8, // waits until cards appear
+    delay: 0.8, 
     ease: "power2.out",
     stagger: {
       each: 0.05,
@@ -110,6 +151,3 @@ function animateSkills() {
     },
   });
 }
-
-
-
