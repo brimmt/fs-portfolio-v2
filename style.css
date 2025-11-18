@@ -6,7 +6,8 @@
 }
 
 body {
-  background: url("assets/portfolio-hero.jpg") center/cover no-repeat fixed;
+  background: url("assets/portfolio-hero.jpg") center/cover no-repeat;
+  background-attachment: scroll; 
   color: #fff;
   min-height: 100vh;
   overflow-x: hidden;  
@@ -875,5 +876,11 @@ body::before {
   .project-card {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll !important;
   }
 }
