@@ -6,8 +6,6 @@
 }
 
 body {
-  background: url("assets/portfolio-hero.jpg") center/cover no-repeat;
-  background-attachment: scroll; 
   color: #fff;
   min-height: 100vh;
   overflow-x: hidden;  
@@ -20,13 +18,16 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.35) 40%,
-    rgba(0, 0, 0, 0.25) 100%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.35) 40%,
+      rgba(0, 0, 0, 0.25)
+    ),
+    url("./assets/portfolio-hero.jpg") center/cover no-repeat;
   z-index: -1;
+  pointer-events: none;
 }
 
 /* Navbar */
