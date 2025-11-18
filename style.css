@@ -72,7 +72,7 @@ body::before {
 
 /* Left Sidebar */
 .sidebar {
-  width: 28%;
+  width: 23%;
   min-width: 260px;
   display: flex;
   z-index: 1;
@@ -91,6 +91,7 @@ body::before {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
+
 .avatar {
   width: 300px; 
   height: 300px;
@@ -101,6 +102,15 @@ body::before {
   margin-bottom: 1.5rem;
 }
 
+/* Sidebar Heading */
+.sidebar-heading {
+  color: #93c5fd;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
 /* Horizontal button layout */
 .sidebar-buttons.horizontal {
   display: flex;
@@ -109,7 +119,36 @@ body::before {
   justify-content: center;
 }
 
+
+.sidebar .btn {
+  box-shadow: 0 0 10px rgba(147, 197, 253, 0.2);
+
+}
+
+.sidebar .btn:hover {
+  box-shadow: 0 0 20px rgba(147, 197, 253, 0.5);
+}
+
+
+
 /* Right Content Panel */
+
+.about-glass {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1.8rem 2rem;          
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  width: 75%;                    
+  max-width: 800px;             
+  margin: 2rem auto;             
+  margin-top: 1.2rem;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+
 .content {
   flex: 1;
   padding: 4rem;
@@ -126,7 +165,7 @@ body::before {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease;
-  width: 80%;
+  width: 90%;
   pointer-events: none; 
 }
 
@@ -154,6 +193,15 @@ body::before {
 
 }
 
+.home-title{
+  text-align: center;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+
 .intro {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   line-height: 1.7;
@@ -168,6 +216,22 @@ body::before {
   color: #cbd5e1;
   font-style: italic;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+
+.about-glass h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  text-align: center;
+}
+
+.about-glass p,
+.about-glass .intro,
+.about-glass .fun-facts {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 100%;
+  text-align: center;
 }
 
 .highlight {
@@ -340,6 +404,7 @@ body::before {
   position: relative;
   width: 100%;
 }
+
 
 .projects-grid {
   display: grid;
@@ -538,6 +603,30 @@ body::before {
   }
 }
 
+/* SMALLER SCREEN CARD SHRINK */
+@media (max-width: 900px) {
+  .project-card {
+    transform: scale(0.92);
+  }
+
+  .project-image img {
+    width: 160px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    transform: scale(0.85);
+  }
+
+  .project-image img {
+    width: 140px;
+    height: 95px;
+  }
+}
+
+
 /*  DRAWER STYLES  */
 .project-drawer {
   position: fixed;
@@ -708,87 +797,83 @@ body::before {
   }
 }
 
-
-.contact-glass-container {
+.brimm-feature-badge {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 14px;
+  padding: 1rem 1.6rem;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 1.5rem;
-  padding: 3rem 2.5rem;
-  margin: 2rem 0;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 900px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(147, 197, 253, 0.2);
-}
-
-.contact-icon {
-  font-size: 2.5rem;
-  min-width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-info {
-  flex: 1;
-}
-
-.contact-info h3 {
-  font-size: 1.1rem;
-  color: #93c5fd;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-.contact-info a {
-  color: #e5e7eb;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  color: #fff;
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(147, 197, 253, 0.2);
 }
 
-.contact-info a:hover {
-  color: #93c5fd;
-  text-shadow: 0 0 10px rgba(147, 197, 253, 0.6);
+.brimm-feature-badge:hover {
+  transform: translateY(-4px);
+  background: rgba(147, 197, 253, 0.25);
+  box-shadow: 0 0 25px rgba(147, 197, 253, 0.45);
 }
 
-.contact-note {
-  margin-top: 2rem;
-  text-align: center;
+.brimm-feature-badge img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(147, 197, 253, 0.4);
+}
+
+.brimm-feature-badge strong {
   font-size: 1.2rem;
-  color: #cbd5e1;
-  font-style: italic;
+  color: #93c5fd;
 }
 
-@media (max-width: 768px) {
-  .contact-glass-container {
-    grid-template-columns: 1fr;
-    padding: 2rem 1.5rem;
+.brimm-feature-badge span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 1000px) {
+  .portfolio-layout {
+    flex-direction: column;
+    height: auto;
+    padding-top: 6rem;
   }
-  
-  .contact-item {
+
+  .sidebar {
+    width: 90%;
+    margin: 2rem auto;
+    border-radius: 1.5rem;
+  }
+
+  .content {
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .section-content {
+    width: 95%;
+  }
+
+  /* Center all text on mobile */
+  .section-content h1,
+  .section-content p {
+    text-align: center;
+  }
+
+  /* Project grid stacks vertically */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
   }
 }
-

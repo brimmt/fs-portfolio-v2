@@ -16,7 +16,6 @@
       <li><a href="#" data-section="home" class="active">Home</a></li>
       <li><a href="#" data-section="skills">Skills</a></li>
       <li><a href="#" data-section="projects">Projects</a></li>
-      <li><a href="#" data-section="contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -26,16 +25,30 @@
     <aside class="sidebar">
       <img src="assets/Tati 4.png" alt="Tatiana Brimm" class="avatar" />
 
+      <h2 class="sidebar-heading">Let's Connect</h2>
+
       <div class="sidebar-buttons horizontal">
-        <a href="TatianaBrimm_Resume.pdf" class="btn" download>📄 Resume</a>
+        <a href="/assets/Brimm-Tatiana-Resume Developer.pdf" class="btn" download>📄 Resume</a>
         <a href="https://github.com/brimmt" class="btn" target="_blank">💻 GitHub</a>
         <a href="https://linkedin.com/in/tatianabrimm" class="btn" target="_blank">🔗 LinkedIn</a>
       </div>
+
+      <a href="http://localhost:5173/" target="_blank" class="brimm-feature-badge">
+    <img src="./assets/brimm-bot-image-cdai-zxc.jpg" alt="BrimmBot" />
+    <div>
+        <strong>BrimmBot V2 (Beta) </strong>
+        <span>AI Portfolio Guide</span>
+    </div>
+</a>
+      
     </aside>
+    
 
     <!-- Right Dynamic Content Panel -->
     <section class="content">
       <div id="home" class="section-content active">
+        <h1 class="home-title">About Me</h1>
+        <div class="about-glass">
         <h1>Hi, I’m <span class="highlight">Tatiana Brimm</span></h1>
         <p>I’m a <span id="typing"></span></p> <br>
         <p class="intro">
@@ -57,7 +70,7 @@
             I love reading and watching sunsets, and I’m a proud animal lover.
         </p>
       </div>
-
+    </div>
       <div id="skills" class="section-content">
         <h1 class="skills-title">Skills</h1>
 
@@ -110,18 +123,20 @@
           </div>
 
           <div class="skill-card">
-            <h3>Other</h3>
+            <h3>Tools</h3>
             <div class="skill-tags">
               <span>Git</span>
               <span>GitHub</span>
               <span>Render</span>
               <span>Vercel</span>
-              <span>Notion</span>
-              <span>Canva</span>
+              <span>Docker</span>
             </div>
           </div>
         </div>
       </div>
+
+
+
       <div id="projects" class="section-content">
         <h1>Featured Projects</h1>
         <p>Check out some of my favorite work:</p>
@@ -136,8 +151,7 @@
               </div>
               <div class="project-info">
                 <h3> JobSeeker AI </h3>
-                <p> An AI-powered career assistant that automates resumes, cover letters, and 
-                  job-search workflows using real-time data and intelligent scraping.</p>
+                <p> An AI job assistant that scrapes roles, enhances your resume and cover letters, remembers your preferences, and helps guide your application process.</p>
                 <div class="project-buttons">
                   <a href="https://github.com/brimmt/fs-jobseeker_ai-ARCHIVED" target="_blank" class="btn github-btn">GitHub</a>
                   <button class="btn learn-more-btn" data-project="jobseeker">Learn More</button>
@@ -152,11 +166,10 @@
               </div>
               <div class="project-info">
                 <h3>Healthcare Dashboard</h3>
-                <p>A healthcare analytics and automation dashboard that visualizes key metrics and 
-                  generates executive-ready proposals with AI.</p>
+                <p>A data-driven dashboard that turns raw patient health metrics into clear clinical insights.</p>
                 <div class="project-buttons">
-                  <a href="https://github.com/brimmt/proposal-ai" target="_blank" class="btn github-btn">GitHub</a>
-                  <button class="btn learn-more-btn" data-project="proposal">Learn More</button>
+                  <a href="https://github.com/brimmt/fs-healthcare-dashboard" target="_blank" class="btn github-btn">GitHub</a>
+                  <button class="btn learn-more-btn" data-project="healthdash">Learn More</button>
                 </div>
               </div>
             </div>
@@ -164,14 +177,14 @@
             <!-- Project Card 3 -->
             <div class="project-card glass">
               <div class="project-image">
-                <img src="assets/" alt="Cloud Project">
+                <img src="assets/cloud_project.jpg" alt="Cloud Project">
               </div>
               <div class="project-info">
                 <h3>Cloud Engineer Project</h3>
-                <p>Modern portfolio with smooth animations, GSAP effects, and glassmorphic design.</p>
+                <p>A mini cloud system showing how real apps run on AWS — from buckets to servers</p>
                 <div class="project-buttons">
-                  <a href="https://github.com/brimmt/fs-portfolio-v2" target="_blank" class="btn github-btn">GitHub</a>
-                  <button class="btn learn-more-btn" data-project="portfolio">Learn More</button>
+                  <a href="https://github.com/brimmt/sys-cloud-AWS" target="_blank" class="btn github-btn">GitHub</a>
+                  <button class="btn learn-more-btn" data-project="cloud">Learn More</button>
                 </div>
               </div>
             </div>
@@ -183,8 +196,7 @@
               </div>
               <div class="project-info">
                 <h3>Lead Gen AI</h3>
-                <p>A compliant web-scraping and AI enrichment system that discovers high-quality leads and 
-                  prepares them for outreach workflows.</p>
+                <p>An AI agent that finds real leads, writes outreach drafts, and keeps everything compliance-friendly.</p>
                 <div class="project-buttons">
                   <a href="#" class="btn github-btn">GitHub</a>
                   <button class="btn learn-more-btn" data-project="leadgen">Learn More</button>
@@ -200,11 +212,10 @@
               </div>
               <div class="project-info">
                 <h3>Calculator AI </h3>
-                <p>An object-oriented calculator rebuilt with class-based architecture, full test coverage, 
-                  Dockerized deployment, CI/CD automation, and optional AI-powered features.
+                <p>A simple calculator that quizzes you with AI and explains the math like a tutor.
                 <div class="project-buttons">
                   <a href="https://github.com/brimmt/fs-calculator-v2-py" target="_blank" class="btn github-btn">GitHub</a>
-                  <button class="btn learn-more-btn" data-project="ecommerce">Learn More</button>
+                  <button class="btn learn-more-btn" data-project="calculator">Learn More</button>
                 </div>
               </div>
             </div>
@@ -212,14 +223,14 @@
             <!-- Project Card 6 -->
             <div class="project-card glass">
               <div class="project-image">
-                <img src="assets/project6.jpg" alt="Project 6">
+                <img src="assets/brimm-bot-image-CDAi-ZXc.jpg" alt="Project 6">
               </div>
               <div class="project-info">
-                <h3>Weather Dashboard</h3>
-                <p>Real-time weather tracking app with forecasts and interactive maps.</p>
+                <h3>BrimmBot</h3>
+                <p>My personal agentic AI assistant, the same bot that helps power all of my projects.</p>
                 <div class="project-buttons">
-                  <a href="#" target="_blank" class="btn github-btn">GitHub</a>
-                  <button class="btn learn-more-btn" data-project="weather">Learn More</button>
+                  <a href="https://github.com/brimmt/ai-brimmbot-v2" target="_blank" class="btn github-btn">GitHub</a>
+                  <button class="btn learn-more-btn" data-project="brimmbot">Learn More</button>
                 </div>
               </div>
             </div>
@@ -227,14 +238,14 @@
             <!-- Project Card 7 -->
             <div class="project-card glass">
               <div class="project-image">
-                <img src="assets/project7.jpg" alt="Project 7">
+                <img src="assets/blogpost2.png" alt="Portfolio">
               </div>
               <div class="project-info">
-                <h3>Task Manager Pro</h3>
+                <h3>Personal Portfolio</h3>
                 <p>Collaborative task management tool with team features and analytics.</p>
                 <div class="project-buttons">
-                  <a href="#" target="_blank" class="btn github-btn">GitHub</a>
-                  <button class="btn learn-more-btn" data-project="taskmanager">Learn More</button>
+                  <a href="https://github.com/brimmt/fs-portfolio-v2" target="_blank" class="btn github-btn">GitHub</a>
+                  <button class="btn learn-more-btn" data-project="portfolio">Learn More</button>
                 </div>
               </div>
             </div>
@@ -242,14 +253,14 @@
             <!-- Project Card 8 -->
             <div class="project-card glass">
               <div class="project-image">
-                <img src="assets/project8.jpg" alt="Project 8">
+                <img src="assets/TicTacToe.jpg" alt="Project 8">
               </div>
               <div class="project-info">
-                <h3>Social Media Analytics</h3>
+                <h3>Tic Tac Toe</h3>
                 <p>Advanced analytics dashboard for tracking social media performance and engagement.</p>
                 <div class="project-buttons">
                   <a href="#" target="_blank" class="btn github-btn">GitHub</a>
-                  <button class="btn learn-more-btn" data-project="analytics">Learn More</button>
+                  <button class="btn learn-more-btn" data-project="tictactoe">Learn More</button>
                 </div>
               </div>
             </div>
@@ -289,6 +300,14 @@
       <p>I watched family, classmates, and friends struggle to balance school, work, family, and the brutal job market and I wanted to build something that actually helps. <br>
         <br> JobSeekerAI is my way of making the process less overwhelming by giving people automation, structure, and intelligent tools they can rely on.</p>
     </div>
+
+    <div class="drawer-section">
+      <h3>Current Status</h3>
+      <p>
+        Version 1 is fully live as an open beta prototype. <br> 
+        <br> Version 2 is in active development with modular services, BrimmBot agent integration, improved job analysis, and a planned architecture shift toward a Python + JavaScript service mesh.
+      </p>
+    </div>
     
     <div class="drawer-section">
       <h3>Tech Stack</h3>
@@ -316,7 +335,7 @@
 
 
 <!-- Healthcare Dashboard-->
-<div class="project-drawer" id="drawer-proposal">
+<div class="project-drawer" id="drawer-healthdash">
   <div class="drawer-content glass">
     <button class="close-drawer-x" aria-label="Close">×</button>
     <div class="drawer-image">
@@ -332,8 +351,20 @@
     
     <div class="drawer-section">
       <h3>Why I Built It</h3>
-      <p>With all the hype around AI, I wanted to build something that demonstrated not just technical skill, but <b>responsible</b> AI usage in healthcare and government settings. <br>
-        <br> This project reinforces my foundation in data analytics while showcasing how AI can be applied safely, ethically, and effectively in high-regulation domains.</p>
+      <p>
+        I wanted to build something that reflects real healthcare challenges, not hype. Many hospitals still rely on legacy SOAP-based systems, outdated interfaces, and siloed datasets.
+        <br><br>
+        I built this project to simulate how a modern healthcare organization might transition from SOAP to REST APIs while introducing AI ethically and responsibly. It reinforces my background in health informatics while showing how AI can be safely introduced into high-regulation environments.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h3>Current Status</h3>
+      <p>
+        Backend engineering is nearly complete (data cleaning, API layer, AI reasoning). 
+        <br><br>
+        The frontend dashboard and interactive charts are scheduled for development next week. C# backend simulation and expanded REST endpoints are planned for the next phase.
+      </p>
     </div>
     
     <div class="drawer-section">
@@ -360,32 +391,50 @@
   </div>
 </div>
 
-<!-- Calculator AI -->
-<div class="project-drawer" id="drawer-portfolio">
+<!-- Cloud  -->
+<div class="project-drawer" id="drawer-cloud">
   <div class="drawer-content glass">
     <button class="close-drawer-x" aria-label="Close">×</button>
     <div class="drawer-image">
-      <img src="assets/calculator.png" alt="Calculator AI">
+      <img src="assets/cloud_project.jpg" alt="Cloud">
     </div>
-    <h2>Calculator AI</h2>
+    <h2>Cloud Engineering Project</h2>
     
     <div class="drawer-section">
       <h3>Description</h3>
-      <p>Modern portfolio with smooth animations, GSAP effects, and glassmorphic design showcasing my skills and projects.</p>
+      <p>
+        This project demonstrates how real applications are deployed and managed in the cloud using AWS best practices. It includes IAM role setup, secure bucket management, a deployed application layer, and a proper architecture layout showing how production systems scale.
+        <br><br>
+        The purpose is to show practical cloud engineering—not just theory—by actually deploying services rather than simulating them locally.
+      </p>
     </div>
     
     <div class="drawer-section">
       <h3>Why I Built It</h3>
-      <p>To create a visually stunning portfolio that demonstrates my frontend development skills and attention to design details.</p>
+      <p>
+        I wanted hands-on experience building and deploying systems the way cloud engineers do in real companies. Instead of sticking to local development, I wanted to learn IAM permissions, EC2 configuration, S3 storage patterns, and network control in a real cloud environment.
+        <br><br>
+        This project helps me build the skills needed for backend, DevOps, and cloud-heavy full-stack roles—especially in healthcare settings where secure architecture is critical.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h3>Current Status</h3>
+      <p>
+        Architecture planning is complete. IAM roles and S3 buckets are set up. Next steps include EC2 deployment, backend service hosting, and integrating a simple monitoring solution. A frontend demo and long-term containerization with Docker are also planned.
+      </p>
     </div>
     
     <div class="drawer-section">
       <h3>Tech Stack</h3>
       <div class="tech-stack-tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>GSAP</span>
+        <span>AWS</span>
+        <span>S3</span>
+        <span>EC2</span>
+        <span>IAM</span>
+        <span>Python</span>
+        <span>Node.js</span>
+        <span>Docker</span>
       </div>
     </div>
     
@@ -431,7 +480,9 @@
   </div>
 </div>
 
-<div class="project-drawer" id="drawer-ecommerce">
+
+<!-- Calculator-->
+<div class="project-drawer" id="drawer-calculator">
   <div class="drawer-content glass">
     <button class="close-drawer-x" aria-label="Close">×</button>
     <div class="drawer-image">
@@ -448,6 +499,13 @@
       <h3>Why I Built It</h3>
       <p>I wanted a simple project that still covered the core foundations every developer needs: logic, loops, classes, input handling, and clean architecture. <br> <br> 
         I built versions in Python, JavaScript, and C# to strengthen cross-language problem-solving, and I created a quiz mode as a fun way to help younger family members practice math interactively.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h3>Current Status</h3>
+      <p>BrimmBot is transitioning from a simple HTML/CSS/Tailwind prototype to a fully modular React frontend.<br>
+          <br> It is still in active development but is open for early beta testing across my projects. <br>
+        </p>
     </div>
     
     <div class="drawer-section">
@@ -473,92 +531,37 @@
   </div>
 </div>
 
-<div class="project-drawer" id="drawer-weather">
-  <div class="drawer-content glass">
-    <button class="close-drawer-x" aria-label="Close">×</button>
-    <div class="drawer-image">
-      <img src="assets/project6.jpg" alt="Weather Dashboard">
-    </div>
-    <h2>Weather Dashboard</h2>
-    
-    <div class="drawer-section">
-      <h3>Description</h3>
-      <p>Real-time weather tracking app with forecasts and interactive maps for multiple locations.</p>
-    </div>
-    
-    <div class="drawer-section">
-      <h3>Why I Built It</h3>
-      <p>To practice working with APIs and create a useful tool for checking weather conditions worldwide.</p>
-    </div>
-    
-    <div class="drawer-section">
-      <h3>Tech Stack</h3>
-      <div class="tech-stack-tags">
-        <span>React</span>
-        <span>TypeScript</span>
-        <span>OpenWeather API</span>
-        <span>Mapbox</span>
-      </div>
-    </div>
-    
-    <div class="drawer-buttons">
-      <a href="#" target="_blank" class="btn github-btn">GitHub</a>
-      <a href="#" target="_blank" class="btn live-demo-btn">Live Demo</a>
-    </div>
-  </div>
-</div>
 
-<div class="project-drawer" id="drawer-taskmanager">
+<!-- Brimm Bot-->
+<div class="project-drawer" id="drawer-brimmbot">
   <div class="drawer-content glass">
     <button class="close-drawer-x" aria-label="Close">×</button>
     <div class="drawer-image">
-      <img src="assets/project7.jpg" alt="Task Manager Pro">
+      <img src="assets/brimm-bot-image-CDAi-ZXc.jpg" alt="Brimm Bot">
     </div>
-    <h2>Task Manager Pro</h2>
+    <h2>Brimm Bot</h2>
     
     <div class="drawer-section">
       <h3>Description</h3>
-      <p>Collaborative task management tool with team features and analytics for project tracking.</p>
-    </div>
-    
-    <div class="drawer-section">
-      <h3>Why I Built It</h3>
-      <p>To improve team productivity and provide insights into project progress through visual analytics.</p>
-    </div>
-    
-    <div class="drawer-section">
-      <h3>Tech Stack</h3>
-      <div class="tech-stack-tags">
-        <span>Next.js</span>
-        <span>Supabase</span>
-        <span>TailwindCSS</span>
-        <span>Chart.js</span>
-      </div>
-    </div>
-    
-    <div class="drawer-buttons">
-      <a href="#" target="_blank" class="btn github-btn">GitHub</a>
-      <a href="#" target="_blank" class="btn live-demo-btn">Live Demo</a>
-    </div>
-  </div>
-</div>
+      <p>BrimmBot is my long-term personal AI assistant — an agentic chatbot designed to appear across my entire ecosystem of projects.<br>
+        <br> Version 1 started as a simple script that could read from a Word document.<br>
+        <br> Version 2 introduces short-term memory, better reasoning, and integrations inside JobSeekerAI, Portfolio V1, and Portfolio V2 (even when the chatbot appears under different names, the core is BrimmBot). <br>
 
-<div class="project-drawer" id="drawer-analytics">
-  <div class="drawer-content glass">
-    <button class="close-drawer-x" aria-label="Close">×</button>
-    <div class="drawer-image">
-      <img src="assets/project8.jpg" alt="Social Media Analytics">
-    </div>
-    <h2>Social Media Analytics</h2>
-    
-    <div class="drawer-section">
-      <h3>Description</h3>
-      <p>Advanced analytics dashboard for tracking social media performance and engagement metrics across platforms.</p>
+        <br> BrimmBot will continue growing as I grow as a developer. Over time, it will evolve into a fully agentic AI capable of multi-step reasoning, task automation, and efficiency improvements that follow Green AI initiatives.</p>
     </div>
     
     <div class="drawer-section">
       <h3>Why I Built It</h3>
-      <p>To help content creators understand their audience and optimize their social media strategy with data-driven insights.</p>
+      <p>During a client project, the team planned to purchase a chatbot solution. Instead of paying unnecessary costs, I took initiative and built one myself using my background in AI automation. <br>
+        <br> BrimmBot started as a simple tool to help reduce expenses, and has now become the foundation for the assistant that powers my future AI products. <br>
+        <br> My long-term goal is to develop BrimmBot into an autonomous, agentic SaaS product that can support multiple industries.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h3>Current Status</h3>
+      <p>BrimmBot is transitioning from a simple HTML/CSS/Tailwind prototype to a fully modular React frontend.<br>
+          <br> It is still in active development but is open for early beta testing across my projects. <br>
+        </p>
     </div>
     
     <div class="drawer-section">
@@ -567,8 +570,127 @@
         <span>React</span>
         <span>Python</span>
         <span>FastAPI</span>
-        <span>PostgreSQL</span>
-        <span>D3.js</span>
+        <span>OpenAI LLM</span>
+        <span>Supabase</span>
+        <span>Docker</span>
+      </div>
+    </div>
+    
+    <div class="drawer-buttons">
+      <a href="https://github.com/brimmt/ai-brimmbot-v2" target="_blank" class="btn github-btn">GitHub</a>
+      <a href="#" target="_blank" class="btn live-demo-btn">Live Demo</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Portfolio -->
+<div class="project-drawer" id="drawer-portfolio">
+  <div class="drawer-content glass">
+    <button class="close-drawer-x" aria-label="Close">×</button>
+    <div class="drawer-image">
+      <img src="assets/blogpost2.png" alt="Portfolio">
+    </div>
+    <h2>Personal Portfolio</h2>
+    
+    <div class="drawer-section">
+      <h3>Description</h3>
+      <p>
+        This project represents my progression as a frontend developer. 
+        <br><br>
+        <strong>Version 1</strong> was built with simple HTML, CSS, and JavaScript. 
+        It helped me learn layout structure, component organization, and responsive design.
+        <br><br>
+        <strong>Version 2</strong> is a complete redesign featuring a glassmorphic UI, animated transitions, a project carousel, and AI-integration with BrimmBot. 
+        It reflects cleaner code practices, better folder structure, and a more modern aesthetic.
+      </p>
+    </div>
+    
+    <div class="drawer-section">
+      <h3>Why I Built It</h3>
+      I needed a website that could show my real growth, not just a template. 
+        <br><br>
+        Instead of relying on AI-generated boilerplate, I built this portfolio myself to reinforce foundational skills—layout, styling, component consistency, accessibility, and responsive design.
+        <br><br>
+        My goal was to build a clean, modern, high-impact site that could grow with me as I create more advanced projects.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h3>Current Status</h3>
+      <p>
+        Version 2 is fully live and continuously improving. 
+        Next steps include migrating parts of the frontend to React and adding new interactive components, such as a dynamic blog section, animated timelines, and embedded agentic AI demos.
+      </p>
+    </div>
+    
+    <div class="drawer-section">
+      <h3>Tech Stack</h3>
+      <div class="tech-stack-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>GSAP</span>
+        <span>React (Planned)</span>
+        <span>Tailwind (Planned)</span>
+        <span>Vercel</span>
+      </div>
+    </div>
+    
+    <div class="drawer-buttons">
+      <a href="https://github.com/brimmt/fs-portfolio-v2" target="_blank" class="btn github-btn">GitHub</a>
+      <a href="tatianabrimm.com" target="_blank" class="btn live-demo-btn">Live Demo</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Tic Tac Toe -->
+<div class="project-drawer" id="drawer-tictactoe">
+  <div class="drawer-content glass">
+    <button class="close-drawer-x" aria-label="Close">×</button>
+    <div class="drawer-image">
+      <img src="assets/TicTacToe.jpg" alt="Tic Tac Toe">
+    </div>
+    <h2>Tic Tac Toe</h2>
+    
+    <div class="drawer-section">
+      <h3>Description</h3>
+      <p>
+        A real-time multiplayer Tic Tac Toe game built to practice WebSockets and event-driven backend architecture.
+        <br><br>
+        Players can connect, make moves, and see updates instantly without refreshing the page. 
+        This project demonstrates how real-time communication works in modern applications such as games, chat apps, and collaborative tools.
+      </p>
+    </div>
+    
+    <div class="drawer-section">
+      <h3>Why I Built It</h3>
+      <p>
+        I wanted a fun, lightweight way to learn how WebSockets work under the hood. 
+        <br><br>
+        Building a real-time game gave me a practical way to implement event listeners, room logic, state synchronization, and backend messaging patterns that appear in full-scale systems.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h3>Current Status</h3>
+      <p>
+        Base structure and game logic are planned. 
+        Next steps include implementing socket events, adding a React or vanilla JS UI, and enabling player matchmaking.
+      </p>
+    </div>
+    
+    <div class="drawer-section">
+      <h3>Tech Stack</h3>
+      <div class="tech-stack-tags">
+        <span>Python</span>
+        <span>WebSockets</span>
+        <span>FastAPI</span>
+        <span>JavaScript</span>
+        <span>Node.js</span>
+        <span>HTML</span>
+        <span>CSS</span>>
       </div>
     </div>
     
@@ -578,53 +700,8 @@
   </div>
 </div>
 
-      <div id="contact" class="section-content">
-        <h1>Let's Connect</h1>
-        <div class="contact-glass-container">
-          <div class="contact-item">
-            <div class="contact-icon">📧</div>
-            <div class="contact-info">
-              <h3>Email</h3>
-              <a href="mailto:tatianalbrimm@gmail.com">tatianalbrimm@gmail.com</a>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">📄</div>
-            <div class="contact-info">
-              <h3>Resume</h3>
-              <a href="TatianaBrimm_Resume.pdf" download>Download Resume</a>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">💼</div>
-            <div class="contact-info">
-              <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/tatianabrimm" target="_blank">View Profile</a>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">💻</div>
-            <div class="contact-info">
-              <h3>GitHub</h3>
-              <a href="https://github.com/brimmt" target="_blank">View Projects</a>
-            </div>
-          </div>
-        </div>
-        <p class="contact-note">Open for full-stack or AI development roles.</p>
-      </div>
-    </section>
-  </main>
-
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js" defer></script>
+
 </body>
 </html>
-
-
-
-
-
-
